@@ -1,6 +1,7 @@
 package ru.javarush.nikolaev.cryptoanalyzer.utils.caesars;
 
 import ru.javarush.nikolaev.cryptoanalyzer.constants.Constants;
+import ru.javarush.nikolaev.cryptoanalyzer.exceptions.AppException;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -34,7 +35,7 @@ public class CaesarAlg {
                 bufferedWriter.write( string + "\n" );
             }
         } catch (IOException fileNotFoundException) {
-            fileNotFoundException.printStackTrace();
+            throw  new AppException("fileNotFoundException");
         }
     }
 
